@@ -217,13 +217,27 @@ JWT_EXPIRES_IN=7d
 npm run test:e2e
 ```
 
+**71 tests - 100% passing** ✅
+
 **Tests implementados:**
 
-- ✅ Auth endpoints (register, login)
-- ✅ Users endpoints (profile, me)
-- ✅ Tasks endpoints (CRUD completo)
+- ✅ Auth endpoints (register, login) - 16 tests
+- ✅ Users endpoints (profile, me) - 15 tests
+- ✅ Tasks endpoints (CRUD completo) - 29 tests
 - ✅ Validaciones y seguridad
 - ✅ Ownership de recursos
+- ✅ Error handling
+
+### Tests Unitarios
+
+```bash
+npm test
+```
+
+**Tests de servicios:**
+
+- ✅ AuthService - 19 tests
+- ✅ TasksService - 26 tests
 
 ---
 

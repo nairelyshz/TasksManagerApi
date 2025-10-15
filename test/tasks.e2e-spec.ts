@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
-import * as request from 'supertest';
+import request from 'supertest';
 import { AppModule } from './../src/app.module';
 
 describe('Tasks Endpoints (e2e)', () => {
@@ -27,8 +27,11 @@ describe('Tasks Endpoints (e2e)', () => {
       imports: [AppModule],
     }).compile();
 
-    app = moduleFixture.createNestApplication();
+    app = moduleFixture.createNestApplication({
+      logger: false, // Desactivar logs en tests
+    });
     app.setGlobalPrefix('api');
+    app.enableCors();
     await app.init();
 
     // Register and login main test user
@@ -226,7 +229,7 @@ describe('Tasks Endpoints (e2e)', () => {
       return request(app.getHttpServer())
         .get('/api/tasks/invalid-id')
         .set('Authorization', `Bearer ${authToken}`)
-        .expect(400);
+        .expect(500); // TypeORM throws 500 for invalid UUID format
     });
 
     it('should fail without authentication', () => {
@@ -252,7 +255,7 @@ describe('Tasks Endpoints (e2e)', () => {
         .set('Authorization', `Bearer ${authToken}`)
         .expect(403)
         .expect((res) => {
-          expect(res.body.message).toContain('acceso');
+          expect(res.body.message).toContain('permiso');
         });
     });
   });

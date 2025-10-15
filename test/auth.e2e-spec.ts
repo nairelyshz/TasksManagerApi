@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { INestApplication, ValidationPipe } from '@nestjs/common';
-import * as request from 'supertest';
+import { INestApplication } from '@nestjs/common';
+import request from 'supertest';
 import { AppModule } from './../src/app.module';
 
 describe('Auth Endpoints (e2e)', () => {
@@ -17,8 +17,11 @@ describe('Auth Endpoints (e2e)', () => {
       imports: [AppModule],
     }).compile();
 
-    app = moduleFixture.createNestApplication();
+    app = moduleFixture.createNestApplication({
+      logger: false, // Desactivar logs en tests
+    });
     app.setGlobalPrefix('api');
+    app.enableCors();
     await app.init();
   });
 

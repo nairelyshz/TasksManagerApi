@@ -1,7 +1,7 @@
 import * as Joi from 'joi';
 
 export const createTaskSchema = Joi.object({
-  title: Joi.string().min(1).max(255).required().messages({
+  title: Joi.string().trim().min(1).max(255).required().messages({
     'string.min': 'El título no puede estar vacío',
     'string.max': 'El título no puede exceder 255 caracteres',
     'any.required': 'El título es requerido',
@@ -13,7 +13,7 @@ export const createTaskSchema = Joi.object({
 });
 
 export const updateTaskSchema = Joi.object({
-  title: Joi.string().min(1).max(255).optional().messages({
+  title: Joi.string().trim().min(1).max(255).optional().messages({
     'string.min': 'El título no puede estar vacío',
     'string.max': 'El título no puede exceder 255 caracteres',
   }),

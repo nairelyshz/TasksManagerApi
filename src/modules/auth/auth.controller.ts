@@ -1,4 +1,4 @@
-import { Controller, Post, Body, UsePipes } from '@nestjs/common';
+import { Controller, Post, Body, UsePipes, HttpCode } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { AuthService } from './auth.service';
 import { RegisterDto } from './dto/register.dto';
@@ -47,6 +47,7 @@ export class AuthController {
   }
 
   @Post('login')
+  @HttpCode(200)
   @UsePipes(new JoiValidationPipe(loginSchema))
   @ApiOperation({ summary: 'Iniciar sesión' })
   @ApiResponse({
