@@ -236,4 +236,3 @@ describe('Auth Endpoints (e2e)', () => {
     });
   });
 });
-

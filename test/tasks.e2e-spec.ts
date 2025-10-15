@@ -566,9 +566,7 @@ describe('Tasks Endpoints (e2e)', () => {
           expect(typeof res.body.total).toBe('number');
           expect(typeof res.body.completed).toBe('number');
           expect(typeof res.body.pending).toBe('number');
-          expect(res.body.total).toBe(
-            res.body.completed + res.body.pending,
-          );
+          expect(res.body.total).toBe(res.body.completed + res.body.pending);
         });
     });
 
@@ -648,4 +646,3 @@ describe('Tasks Endpoints (e2e)', () => {
     });
   });
 });
-

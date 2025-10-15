@@ -101,9 +101,7 @@ describe('Users Endpoints (e2e)', () => {
     });
 
     it('should fail without authentication token', () => {
-      return request(app.getHttpServer())
-        .get('/api/users/me')
-        .expect(401);
+      return request(app.getHttpServer()).get('/api/users/me').expect(401);
     });
 
     it('should fail with expired token', () => {
@@ -215,4 +213,3 @@ describe('Users Endpoints (e2e)', () => {
     });
   });
 });
-

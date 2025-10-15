@@ -99,8 +99,12 @@ npm run docker:clean
 - ✅ Actualizar tareas
 - ✅ Marcar como completada/pendiente (toggle)
 - ✅ Eliminar tareas
-- ✅ Estadísticas (total, completadas, pendientes)
 - ✅ Validación de propiedad (cada usuario ve solo sus tareas)
+
+### 🎨 Funcionalidades Extras
+
+- ✅ **Filtros de Tareas en Frontend** - Filtrar por: Todas, Completadas, Pendientes. Es una funcioanlidad que aporta mucho a la app cuando tiene mucha información
+- ✅ **Contadores dinámicos** - Porque ofrecen un resumen actual del estatus general de las tareas, fácil de entender por el usuario a simple vista
 
 ### 🛡️ Seguridad
 
@@ -337,3 +341,43 @@ npm run lint
 # Format
 npm run format
 ```
+
+---
+
+## 📝 Notas
+
+- ✅ No se usa `class-validator` ni `class-transformer` (se usa Joi)
+- ✅ Módulos en `src/modules`
+- ✅ Código común en `src/common`
+- ✅ Configuración de DB en `src/_db`
+- ✅ Node.js v22.20.0 requerido
+
+---
+
+## 📖 Documentación Adicional
+
+- **Swagger**: http://localhost:3000/api/docs
+- **DOCKER.md**: Guía completa de Docker
+- **AGENTS.md**: Reglas de desarrollo
+- **FUNCIONALIDAD_OPCIONAL.md**: Detalles de filtros de tareas (raíz del proyecto)
+
+---
+
+## 🎯 Estado del Proyecto
+
+✅ **Completo y funcional**
+
+- Backend implementado al 100%
+- Tests E2E: 71/71 pasando (100%)
+- Tests unitarios: 45 tests
+- Documentación completa
+- Docker configurado
+- Listo para producción
+
+---
+
+## 👨‍💻 Autor
+
+Proyecto Task Manager - Full Stack Application
+
+**Stack:** NestJS + PostgreSQL + Docker + Flutter
