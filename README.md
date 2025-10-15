@@ -358,7 +358,6 @@ npm run format
 
 - **Swagger**: http://localhost:3000/api/docs
 - **DOCKER.md**: Guía completa de Docker
-- **AGENTS.md**: Reglas de desarrollo
 - **FUNCIONALIDAD_OPCIONAL.md**: Detalles de filtros de tareas (raíz del proyecto)
 
 ---
