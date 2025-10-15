@@ -6,12 +6,12 @@
 
 -- Insert test users
 INSERT INTO users (id, email, password, name, created_at, updated_at) VALUES
-    ('550e8400-e29b-41d4-a716-446655440001', 'john.doe@example.com', '$2b$10$FsIQ0YwDo1Xb3H9nUQxPTOcY7URtXsuagEaDB6Emcl7BKH3oWxxhu', 'John Doe', NOW(), NOW()),
+    ('550e8400-e29b-41d4-a716-446655440001', 'demo@example.com', '$2b$10$FsIQ0YwDo1Xb3H9nUQxPTOcY7URtXsuagEaDB6Emcl7BKH3oWxxhu', 'Demo User', NOW(), NOW()),
     ('550e8400-e29b-41d4-a716-446655440002', 'jane.smith@example.com', '$2b$10$FsIQ0YwDo1Xb3H9nUQxPTOcY7URtXsuagEaDB6Emcl7BKH3oWxxhu', 'Jane Smith', NOW(), NOW()),
     ('550e8400-e29b-41d4-a716-446655440003', 'bob.wilson@example.com', '$2b$10$FsIQ0YwDo1Xb3H9nUQxPTOcY7URtXsuagEaDB6Emcl7BKH3oWxxhu', 'Bob Wilson', NOW(), NOW())
 ON CONFLICT (email) DO NOTHING;
 
--- Insert test tasks for John Doe
+-- Insert test tasks for Demo User
 INSERT INTO tasks (title, description, completed, user_id, created_at, updated_at) VALUES
     ('Completar proyecto de NestJS', 'Terminar el backend del task manager con autenticación JWT', false, '550e8400-e29b-41d4-a716-446655440001', NOW(), NOW()),
     ('Revisar documentación de TypeORM', 'Leer sobre relaciones y migraciones', false, '550e8400-e29b-41d4-a716-446655440001', NOW(), NOW()),
